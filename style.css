@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins' , sans-serif;
+    box-sizing: border-box;
+    overflow: hidden
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0px;
+    font-weight: 14px;
+    
+ 
+}
+button{
+    border: none;
+    outline: none;
+    padding: 15px 5px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 0px;
+
+}
+
+ul li{
+    list-style:none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(data:image/png;base64,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);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration:line-through ;
+}
+ul li.checked::before{
+    background-image: url(https://img.freepik.com/premium-vector/red-check-tick-icon-vector-illustration_723710-985.jpg);
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+}
+ul li span:hover{
+    background: #edeef0;
+}
